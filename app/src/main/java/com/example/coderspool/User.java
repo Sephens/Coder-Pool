@@ -7,11 +7,15 @@ public class User {
 
     }
 
-    public User(String email, String pass,String conpass){
+    public User(String email, String pass, String conpass) {
         this.email = email;
         this.pass = pass;
         this.conpass = conpass;
+
+
+
     }
+
 
 
 }

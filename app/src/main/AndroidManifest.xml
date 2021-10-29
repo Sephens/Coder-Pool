@@ -10,13 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CodersPool">
         <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity
             android:name=".UserProfile"
             android:exported="true" />
         <activity
             android:name=".SignUP"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

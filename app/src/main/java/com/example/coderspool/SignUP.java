@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.EmailAuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
@@ -28,7 +29,8 @@ import java.util.regex.PatternSyntaxException;
 public class SignUP extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private TextView logIn ;
-    private EditText txtemail,txtpassword,txtcofirmpass;
+   // private EditText txtemail,txtpassword,txtcofirmpass;
+    TextInputLayout emaill, passs, confPass;
     private Button signup;
     private ProgressBar pbar;
 
@@ -38,12 +40,11 @@ public class SignUP extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
         mAuth = FirebaseAuth.getInstance();
 
-        pbar = (ProgressBar) findViewById(R.id.progressBars);
-        signup = (Button) findViewById(R.id.sign_up);
-        txtemail = (EditText) findViewById(R.id.useremails);
-        txtpassword =(EditText) findViewById(R.id.passwords);
-        txtcofirmpass = (EditText) findViewById(R.id.confirm_passwords);
-
+        pbar =  findViewById(R.id.progressBars);
+        signup = findViewById(R.id.sign_up);
+        emaill = findViewById(R.id.sign_up_email);
+        passs =findViewById(R.id.password);
+        confPass = findViewById(R.id.confirm_password);
 
     }
 
@@ -55,47 +56,47 @@ public class SignUP extends AppCompatActivity {
     }
 
     public void onClickSignUp(View view){
-        String email = txtemail.getText().toString().trim();
-        String pass = txtpassword.getText().toString().trim();
-        String conpass = txtcofirmpass.getText().toString().trim();
+        String email = emaill.getEditText().getText().toString().trim();
+        String pass = passs.getEditText().getText().toString().trim();
+        String conpass = confPass.getEditText().getText().toString().trim();
 
         if (email.isEmpty()){
-            txtemail.setError("Provide an email");
-            txtemail.requestFocus();
+            emaill.setError("Please enter email");
+            emaill.requestFocus();
             return;
         }
 
        else if(pass.isEmpty()){
-            txtpassword.setError("Enter a password");
-            txtpassword.requestFocus();
+            passs.setError("Enter a password");
+            passs.requestFocus();
             return;
         }
 
         else if (conpass.isEmpty()){
-            txtcofirmpass.setError("Confirm password");
-            txtcofirmpass.requestFocus();
+            confPass.setError("Confirm password");
+            confPass.requestFocus();
             return;
         }
        else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            txtemail.setError("please provide valid email...");
-            txtemail.requestFocus();
+            emaill.setError("please provide valid email...");
+            emaill.requestFocus();
             return;
         }
 
         else if (pass.length()<6){
-            txtpassword.setError("password too short");
-            txtpassword.requestFocus();
+            passs.setError("password too short");
+            passs.requestFocus();
             return;
         }
 
         else if (conpass.length()<6){
-            txtcofirmpass.setError("password too short");
-            txtcofirmpass.requestFocus();
+            confPass.setError("password too short");
+            confPass.requestFocus();
             return;
         }
         else if(!pass.equals(conpass)){
-            txtcofirmpass.setError("The password does not match");
-            txtcofirmpass.requestFocus();
+            confPass.setError("The password does not match");
+            confPass.requestFocus();
             return;
         }
         pbar.setVisibility(View.VISIBLE);
@@ -112,7 +113,11 @@ public class SignUP extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()){
-                                        Toast.makeText(SignUP.this, "User has been registered successfully", Toast.LENGTH_SHORT).show();
+                                        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+                                        Toast.makeText(SignUP.this, "Sign Up successful", Toast.LENGTH_SHORT).show();
+                                        pbar.setVisibility(View.GONE);
+                                        firebaseUser.sendEmailVerification();
+                                        Toast.makeText(SignUP.this, "Please check your email to verify", Toast.LENGTH_LONG).show();
                                         pbar.setVisibility(View.GONE);
                                         Intent intent = new Intent(SignUP.this,MainActivity.class);
                                         startActivity(intent);
