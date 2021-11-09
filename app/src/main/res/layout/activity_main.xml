@@ -5,34 +5,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_login"
+    android:background="@color/white"
     android:padding="16dp"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/icon"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="50dp"
-        android:contentDescription="logo"
-        android:layout_gravity="center"
-        android:src="@drawable/ic_baseline_computer_24"
-         />
-
+ <ImageView
+     android:id="@+id/icon"
+     android:layout_width="200dp"
+     android:layout_height="150dp"
+     android:layout_marginTop="10dp"
+     android:contentDescription="logo"
+     android:layout_gravity="right"
+     android:src="@drawable/person_reading"
+     />
 
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:id="@+id/emailLogIn"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:boxStrokeColor="@color/white"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        app:boxStrokeColor="@color/colorAccent"
         app:boxStrokeWidth="2dp"
         app:endIconMode="clear_text"
-        android:textColorHint="@color/login_form_details"
+        android:textColorHint="#F9A826"
         android:hint="Email address"
-        app:hintTextColor="@color/white"
+        app:hintTextColor="@color/black"
+        android:background="@drawable/et_bg"
         app:startIconDrawable="@drawable/ic_baseline_email_24"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -40,7 +40,6 @@
         <com.google.android.material.textfield.TextInputEditText
             android:inputType="textEmailAddress"
             android:layout_width="match_parent"
-            android:background="@drawable/et_bg"
             android:layout_height="match_parent"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -50,20 +49,20 @@
         android:layout_marginTop="20dp"
         android:id="@+id/passwordLogIn"
         android:hint="Password"
-        app:hintTextColor="@color/white"
+        android:background="@drawable/et_bg"
+        app:hintTextColor="@color/black"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        app:boxStrokeColor="@color/white"
+        app:boxStrokeColor="@color/colorAccent"
         app:boxStrokeWidth="2dp"
         app:startIconDrawable="@drawable/ic_baseline_lock_24"
         app:endIconMode="password_toggle"
         android:layout_width="match_parent"
-        android:textColorHint="@color/login_form_details"
+        android:textColorHint="#F9A826"
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
             android:inputType="textPassword"
             android:layout_width="match_parent"
-            android:background="@drawable/et_bg"
             android:layout_height="match_parent"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -75,12 +74,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:background="@drawable/button_2"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/black"
         android:drawableStart="@drawable/ic_baseline_login_24"
         android:text="@string/login_now"
         android:textAllCaps="false"
         android:onClick="onClickLogIn"
-        android:textColor="@color/login_form_details_medium"
+        android:textColor="@color/black"
         />
     <ProgressBar
         android:id="@+id/progressBarLogin"
@@ -90,7 +89,7 @@
         android:layout_marginTop="-40dp"
         android:layout_marginRight="4dp"
         android:visibility="gone"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/black"
         style="?android:attr/progressBarStyleLarge"
         />
 
@@ -98,19 +97,31 @@
         android:id="@+id/forgot_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="50dp"
         android:layout_marginBottom="20dp"
-        android:layout_gravity="center"
+        android:layout_gravity="right"
+        android:layout_marginRight="16dp"
         android:text="@string/don_t_remember_password"
-        android:textColor="@color/login_form_details"
-        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:textSize="13sp"
          />
+   <com.google.android.material.checkbox.MaterialCheckBox
+       android:id="@+id/rememberMe"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+      android:text="Remember Me"
+      android:textSize="13sp"
+       android:layout_marginTop="-50dp"
+      >
+
+   </com.google.android.material.checkbox.MaterialCheckBox>
 
     <View
         android:id="@+id/line1"
+        android:layout_marginTop="16dp"
         android:layout_width="120dp"
         android:layout_height="1dp"
-        android:background="@color/login_form_details_medium"
+        android:background="@color/black"
         />
 
     <TextView
@@ -120,7 +131,7 @@
         android:text="@string/or"
         android:layout_marginTop="-6dp"
         android:layout_gravity="center"
-        android:textColor="@color/login_form_details"
+        android:textColor="@color/black"
         android:textSize="16sp"
         />
 
@@ -130,7 +141,7 @@
         android:layout_height="1dp"
         android:layout_marginTop="-15dp"
         android:layout_gravity="right"
-        android:background="@color/login_form_details_medium"
+        android:background="@color/black"
        />
 
     <TextView
@@ -143,16 +154,17 @@
         android:layout_marginTop="40dp"
         android:drawableStart="@drawable/ic_if_square_facebook"
         android:text="@string/sign_in_with_facebook"
-        android:textColor="@color/login_form_details"
+        android:textColor="@color/black"
         android:textStyle="bold"
         />
 
     <View
         android:id="@+id/footer_line"
         android:layout_width="wrap_content"
-        android:layout_height="1dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="16dp"
-        android:background="#fff"
+        android:background="@color/black"
         />
 
     <TextView
@@ -160,10 +172,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/dont_have_an_account"
-        android:textColor="@color/login_form_details"
+        android:textColor="@color/black"
         android:layout_gravity="center"
         android:onClick="dontHaveAccount"
         />
+
 
 
 

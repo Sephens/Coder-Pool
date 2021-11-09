@@ -10,6 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CodersPool">
         <activity
+            android:name=".Questions_Activity"
+            android:exported="true" />
+        <activity
+            android:name=".BooksCategory"
+            android:exported="true" />
+        <activity
+            android:name=".NoteEditorActivity"
+            android:exported="true" />
+        <activity
+            android:name=".NotePad"
+            android:exported="true" />
+        <activity
+            android:name=".Category"
+            android:exported="true" />
+        <activity
+            android:name=".Dashboard"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true" />
         <activity
@@ -27,6 +45,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
