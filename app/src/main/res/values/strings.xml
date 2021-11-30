@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Coders Pool</string>
+    <string name="app_name">Programmer Pocket Library</string>
     <string name="email_address">Email address</string>
     <string name="password">Password</string>
     <string name="login_now">Login Now</string>

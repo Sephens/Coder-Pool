@@ -2,13 +2,64 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.coderspool">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
+        android:name=".MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CodersPool">
+        <activity
+            android:name=".NewsPaper"
+            android:exported="true" />
+        <activity
+            android:name=".BottomNav"
+            android:exported="true" />
+        <activity
+            android:name=".NewsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".CBks"
+            android:exported="true" />
+        <activity
+            android:name=".JavaScriptBks"
+            android:exported="true" />
+        <activity
+            android:name=".CPlusBks"
+            android:exported="true" />
+        <activity
+            android:name=".CSharpBks"
+            android:exported="true" />
+        <activity
+            android:name=".GolangBks"
+            android:exported="true" />
+        <activity
+            android:name=".FlutterBks"
+            android:exported="true" />
+        <activity
+            android:name=".PHP"
+            android:exported="true" />
+        <activity
+            android:name=".AndroidBks"
+            android:exported="true" />
+        <activity
+            android:name=".PythonBks"
+            android:exported="true" />
+        <activity
+            android:name=".JavaBks"
+            android:exported="true" />
+        <activity
+            android:name=".PdfViewJava"
+            android:exported="true" />
+        <activity
+            android:name=".JavaBooks"
+            android:exported="true" />
         <activity
             android:name=".Questions_Activity"
             android:exported="true" />
@@ -29,9 +80,6 @@
             android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
-        <activity
-            android:name=".UserProfile"
             android:exported="true" />
         <activity
             android:name=".SignUP"

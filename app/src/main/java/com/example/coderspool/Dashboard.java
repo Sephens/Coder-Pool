@@ -1,5 +1,6 @@
 package com.example.coderspool;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
@@ -9,23 +10,24 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 
 public class Dashboard extends AppCompatActivity {
-
-    RecyclerView recycler1,recycler2,recycler3,recycler4;
-    RecyclerView.Adapter adapterr,adapt2,adapt3,adapt4;
     ImageView imgV,imgMenu,nendaNote;
     NavigationView navigationView;
     DrawerLayout drawerLayout;
-    CardView booksCard;
+    CardView booksCard,newsPaperCat;
+    BottomNavigationView btNv;
     TextView txtbooks;
+    private boolean running,wasRunning;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,109 +38,64 @@ public class Dashboard extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawerLayout);
 
         booksCard = findViewById(R.id.books_card);
+        newsPaperCat = findViewById(R.id.newsPaperCat);
 
         txtbooks = findViewById(R.id.textbooks);
-        //getSupportActionBar().hide();
 
-      /*  recycler1 = findViewById(R.id.recycler1);
-        recycler2 = findViewById(R.id.recycler2);
-        recycler3 = findViewById(R.id.recycler3);
-        recycler4 = findViewById(R.id.recycler4);
-
-        imgV = findViewById(R.id.imago);
-        nendaNote= findViewById(R.id.enda_notepad);
+        btNv = findViewById(R.id.bottom_nav);
+        btNv.setBackground(null);
 
 
 
-        recycler1();
-        recycler2();
-        recycler3();
-        recycler4();
 
-       */
-    }
+        if (savedInstanceState!=null){
+            running = savedInstanceState.getBoolean("running");
+            wasRunning = savedInstanceState.getBoolean("wasRunning");
+        }
 
-    private void recycler1() {
-        recycler1.setHasFixedSize(true);
-        recycler1.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
-        ArrayList<SlideAdapterHelper> ssl = new ArrayList<>();
-        ssl.add(new SlideAdapterHelper(R.drawable.c,"image2","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.react,"image2","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.java,"image3","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.c,"image2","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.react,"image2","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.java,"image3","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.c,"image2","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.react,"image2","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.java,"image3","So nice to program"));
 
-        adapterr = new adapter(ssl);
-        recycler1.setAdapter(adapterr);
+         //btNv.setSelectedItemId(R.id.dashboard_menu);
+         btNv.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+             @Override
+             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                 switch (item.getItemId()){
+                     case R.id.dashboard_menu:
+                         Intent dash = new Intent(getApplicationContext(),Dashboard.class);
+                         startActivity(dash);
+                         overridePendingTransition(0,0);
+                         return true;
+
+                     case R.id.notes_menu:
+                         Intent notes = new Intent(getApplicationContext(),NotePad.class);
+                         startActivity(notes);
+                         overridePendingTransition(0,0);
+                         return true;
+                 }
+                 return false;
+             }
+         });
     }
 
 
-    private void recycler2() {
-        recycler2.setHasFixedSize(true);
-        recycler2.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
-        ArrayList<SlideAdapterHelper> ssl = new ArrayList<>();
-        ssl.add(new SlideAdapterHelper(R.drawable.c,"image2","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.react,"image2","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.java,"image3","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.c,"image2","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.react,"image2","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.java,"image3","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.c,"image2","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.react,"image2","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.java,"image3","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.c,"image2","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.react,"image2","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.java,"image3","So nice to program"));
-
-        adapt2 = new adapter(ssl);
-        recycler2.setAdapter(adapt2);
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putBoolean("running", running);
+        savedInstanceState.putBoolean("wasRunning", wasRunning);
     }
 
-    private void recycler3() {
-        recycler3.setHasFixedSize(true);
-        recycler3.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
-        ArrayList<SlideAdapterHelper> ssl = new ArrayList<>();
-        ssl.add(new SlideAdapterHelper(R.drawable.c,"image2","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.react,"image2","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.java,"image3","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.c,"image2","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.react,"image2","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.java,"image3","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.c,"image2","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.react,"image2","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.java,"image3","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.c,"image2","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.react,"image2","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.java,"image3","So nice to program"));
-
-        adapt3 = new adapter(ssl);
-        recycler3.setAdapter(adapt3);
+    protected void onPause(){
+        super.onPause();
+        wasRunning=running;
+        running=false;
     }
 
-    private void recycler4() {
-        recycler4.setHasFixedSize(true);
-        recycler4.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
-        ArrayList<SlideAdapterHelper> ssl = new ArrayList<>();
-        ssl.add(new SlideAdapterHelper(R.drawable.c,"image2","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.react,"image2","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.java,"image3","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.c,"image2","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.react,"image2","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.java,"image3","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.c,"image2","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.react,"image2","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.java,"image3","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.c,"image2","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.react,"image2","So nice to program"));
-        ssl.add(new SlideAdapterHelper(R.drawable.java,"image3","So nice to program"));
-
-        adapt4 = new adapter(ssl);
-        recycler4.setAdapter(adapt4);
+    protected void onResume(){
+        super.onResume();
+        if (wasRunning){
+            running=true;
+        }
     }
+
 
     public void thisImage(View view){
         Intent intent = new Intent(Dashboard.this,Category.class);
@@ -154,14 +111,17 @@ public class Dashboard extends AppCompatActivity {
         Intent nenda = new Intent(Dashboard.this,NotePad.class);
         startActivity(nenda);
     }
-
     public void books(View view){
         Intent books = new Intent(Dashboard.this,BooksCategory.class);
         startActivity(books);
     }
-
     public void onClickQuestions(View v){
         Intent intent = new Intent(getApplicationContext(),Questions_Activity.class);
+        startActivity(intent);
+    }
+
+    public void onClickNewsPaper(View view) {
+        Intent intent = new Intent(Dashboard.this,NewsPaper.class);
         startActivity(intent);
     }
 }

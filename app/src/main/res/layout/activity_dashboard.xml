@@ -6,9 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".Dashboard">
+    android:visibility="visible"
+    tools:context=".Dashboard"
+    tools:visibility="visible">
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_bar"
@@ -22,7 +23,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <LinearLayout
@@ -37,18 +38,15 @@
                 android:layout_height="50dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-
-                >
-
+                app:layout_constraintTop_toTopOf="parent">
                 <ImageView
                     android:id="@+id/menu_bar"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_marginLeft="8dp"
                     android:onClick="onClickMenuBar"
+                    android:backgroundTint="#F9A826"
                     android:src="@drawable/ic_baseline_menu_24" />
-
             </Toolbar>
 
             <TextView
@@ -80,12 +78,13 @@
                 android:layout_marginTop="-70dp"
                 android:layout_marginEnd="24dp"
                 app:srcCompat="@drawable/shelves" />
-
         </LinearLayout>
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -99,9 +98,9 @@
                     <LinearLayout
                         android:id="@+id/linearLayout"
                         android:layout_width="0dp"
-                        android:layout_height="175dp"
+                        android:layout_height="145dp"
                         android:orientation="horizontal"
-                        android:padding="10dp"
+                        android:padding="5dp"
                         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
@@ -112,10 +111,10 @@
                             android:id="@+id/books_card"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_margin="10dp"
+                            android:layout_margin="5dp"
                             android:layout_weight="1"
                             android:onClick="books"
-                            app:cardElevation="5dp">
+                            app:cardElevation="1dp">
 
                             <RelativeLayout
                                 android:layout_width="match_parent"
@@ -130,6 +129,7 @@
                                     android:layout_centerHorizontal="true"
                                     android:fontFamily="@font/aclonica"
                                     android:text="Books"
+                                    android:layout_marginBottom="6dp"
                                     android:textSize="20sp" />
 
                                 <ImageView
@@ -145,10 +145,10 @@
                         <androidx.cardview.widget.CardView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:onClick="onClickQuestions"
-                            android:layout_margin="10dp"
+                            android:layout_margin="5dp"
                             android:layout_weight="1"
-                            app:cardElevation="5dp">
+                            android:onClick="onClickQuestions"
+                            app:cardElevation="1dp">
 
                             <RelativeLayout
                                 android:layout_width="match_parent"
@@ -162,6 +162,7 @@
                                     android:layout_alignParentBottom="true"
                                     android:layout_centerHorizontal="true"
                                     android:fontFamily="@font/aclonica"
+                                    android:layout_marginBottom="6dp"
                                     android:text="Questions"
                                     android:textSize="20sp" />
 
@@ -179,9 +180,9 @@
                     <LinearLayout
                         android:id="@+id/linearLayout2"
                         android:layout_width="0dp"
-                        android:layout_height="175dp"
+                        android:layout_height="145dp"
                         android:orientation="horizontal"
-                        android:padding="10dp"
+                        android:padding="5dp"
                         app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="1.0"
@@ -191,9 +192,9 @@
                         <androidx.cardview.widget.CardView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_margin="10dp"
+                            android:layout_margin="5dp"
                             android:layout_weight="1"
-                            app:cardElevation="5dp">
+                            app:cardElevation="1dp">
 
                             <RelativeLayout
                                 android:layout_width="match_parent"
@@ -222,11 +223,13 @@
                         </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/newsPaperCat"
+                            android:onClick="onClickNewsPaper"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_margin="10dp"
+                            android:layout_margin="5dp"
                             android:layout_weight="1"
-                            app:cardElevation="5dp">
+                            app:cardElevation="1dp">
 
                             <RelativeLayout
                                 android:layout_width="match_parent"
@@ -239,7 +242,7 @@
                                     android:layout_alignBottom="@id/imageViewNewspaper"
                                     android:layout_alignParentBottom="true"
                                     android:layout_centerHorizontal="true"
-                                    android:layout_marginBottom="11dp"
+                                    android:layout_marginBottom="6dp"
                                     android:fontFamily="@font/aclonica"
                                     android:text="Newspapers"
                                     android:textSize="20sp" />
@@ -250,7 +253,7 @@
                                     android:layout_height="75dp"
                                     android:layout_centerHorizontal="true"
                                     android:layout_marginTop="10dp"
-                                    app:srcCompat="@drawable/news" />
+                                    app:srcCompat="@drawable/newss" />
                             </RelativeLayout>
                         </androidx.cardview.widget.CardView>
                     </LinearLayout>
@@ -258,9 +261,9 @@
                     <LinearLayout
                         android:id="@+id/linearLayout4"
                         android:layout_width="0dp"
-                        android:layout_height="175dp"
+                        android:layout_height="145dp"
                         android:orientation="horizontal"
-                        android:padding="10dp"
+                        android:padding="5dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="1.0"
@@ -270,9 +273,9 @@
                         <androidx.cardview.widget.CardView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_margin="10dp"
+                            android:layout_margin="5dp"
                             android:layout_weight="1"
-                            app:cardElevation="5dp">
+                            app:cardElevation="1dp">
 
                             <RelativeLayout
                                 android:layout_width="match_parent"
@@ -285,7 +288,7 @@
                                     android:layout_alignBottom="@id/imageViewEbooks"
                                     android:layout_alignParentBottom="true"
                                     android:layout_centerHorizontal="true"
-                                    android:layout_marginBottom="13dp"
+                                    android:layout_marginBottom="18dp"
                                     android:fontFamily="@font/aclonica"
                                     android:text="E-Books"
                                     android:textSize="20sp" />
@@ -303,23 +306,22 @@
                         <androidx.cardview.widget.CardView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_margin="10dp"
+                            android:layout_margin="5dp"
                             android:layout_weight="1"
-                            app:cardElevation="5dp">
+                            app:cardElevation="1dp">
 
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent">
-
                                 <TextView
                                     android:id="@+id/textmagazines"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_alignBottom="@id/imageViewMagazines"
+                                    android:fontFamily="@font/aclonica"
                                     android:layout_alignParentBottom="true"
                                     android:layout_centerHorizontal="true"
-                                    android:layout_marginBottom="17dp"
-                                    android:fontFamily="@font/aclonica"
+                                    android:layout_marginBottom="6dp"
                                     android:text="Magazines"
                                     android:textSize="20sp" />
 
@@ -333,477 +335,48 @@
                             </RelativeLayout>
                         </androidx.cardview.widget.CardView>
                     </LinearLayout>
-
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
-
         </ScrollView>
-    </LinearLayout>
-
-
-    <!--
-        <com.google.android.material.navigation.NavigationView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/nav_bar"
-            app:headerLayout="@layout/header"
-            app:menu="@menu/main_menu"
-            android:layout_gravity="start"
-            >
-
-        </com.google.android.material.navigation.NavigationView>
-
-        <LinearLayout
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
+            android:layout_height="0dp"
+            android:layout_weight="0.19"
             >
-            <RelativeLayout
+            <com.google.android.material.bottomappbar.BottomAppBar
+                android:id="@+id/bottom_App"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:padding="10dp"
-                >
-                <ImageView
-                    android:id="@+id/menu_bar"
-                    android:onClick="onClickMenuBar"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginLeft="8dp"
-                    android:src="@drawable/ic_baseline_menu_24" />
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:src="@drawable/notification_icon"
-                    android:layout_alignParentRight="true"
-                    />
+                android:layout_gravity="bottom"
+                app:fabCradleMargin="10dp"
+                app:fabCradleRoundedCornerRadius="20dp">
 
-            </RelativeLayout>
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:id="@+id/bottom_nav"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:itemIconTint="@color/bottom_nav_background"
+                    app:itemTextColor="@color/bottom_nav_background"
+                    android:layout_marginRight="20dp"
+                    app:labelVisibilityMode="labeled"
+                    app:menu="@menu/bottom_nav_menu">
 
-            <ScrollView
+                </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+            </com.google.android.material.bottomappbar.BottomAppBar>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                >
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-
-                    <HorizontalScrollView
-                        android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:layout_marginTop="10dp"
-                        >
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal"
-                            >
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:layout_gravity="center"
-                                >
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical"
-                                    >
-
-                                    <RelativeLayout
-                                        android:layout_width="60dp"
-                                        android:layout_height="60dp"
-                                        android:background="@drawable/curved_bg"
-                                        android:elevation="8dp"
-                                        android:layout_margin="10dp"
-                                        >
-
-                                        <ImageView
-                                            android:id="@+id/imago"
-                                            android:layout_width="58dp"
-                                            android:layout_height="58dp"
-                                            android:layout_centerInParent="true"
-                                            android:onClick="thisImage"
-                                            android:scaleType="centerCrop"
-                                            android:src="@drawable/categories" />
-
-                                    </RelativeLayout>
-
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:text="Categories"
-                                        android:textAlignment="center"
-                                        android:layout_gravity="center_horizontal"
-                                        android:textSize="14sp"
-                                        />
-
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical"
-                                    >
-
-                                    <RelativeLayout
-                                        android:layout_width="60dp"
-                                        android:layout_height="60dp"
-                                        android:background="@drawable/curved_bg"
-                                        android:elevation="8dp"
-                                        android:layout_margin="10dp"
-                                        >
-
-                                        <ImageView
-                                            android:id="@+id/enda_notepad"
-                                            android:layout_width="58dp"
-                                            android:layout_height="58dp"
-                                            android:layout_centerInParent="true"
-                                            android:onClick="nendaNotePad"
-                                            android:scaleType="centerCrop"
-                                            android:src="@drawable/notes_icon" />
-
-                                    </RelativeLayout>
-
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:text="Note Pad"
-                                        android:textAlignment="center"
-                                        android:layout_gravity="center_horizontal"
-                                        android:textSize="14sp"
-                                        />
-
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical"
-                                    >
-
-                                    <RelativeLayout
-                                        android:layout_width="60dp"
-                                        android:layout_height="60dp"
-                                        android:background="@drawable/curved_bg"
-                                        android:elevation="8dp"
-                                        android:layout_margin="10dp"
-                                        >
-
-                                        <ImageView
-                                            android:layout_width="58dp"
-                                            android:layout_height="58dp"
-                                            android:layout_centerInParent="true"
-                                            android:scaleType="centerCrop"
-                                            android:src="@drawable/java" />
-
-                                    </RelativeLayout>
-
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:text="Category Three"
-                                        android:textAlignment="center"
-                                        android:layout_gravity="center_horizontal"
-                                        android:textSize="12sp"
-                                        />
-
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical"
-                                    >
-
-                                    <RelativeLayout
-                                        android:layout_width="60dp"
-                                        android:layout_height="60dp"
-                                        android:background="@drawable/curved_bg"
-                                        android:elevation="8dp"
-                                        android:layout_margin="10dp"
-                                        >
-                                        <ImageView
-                                            android:layout_width="58dp"
-                                            android:layout_height="58dp"
-                                            android:src="@drawable/react"
-                                            android:scaleType="centerCrop"
-                                            android:layout_centerInParent="true"
-                                            />
-
-                                    </RelativeLayout>
-
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:text="Category Four"
-                                        android:textAlignment="center"
-                                        android:layout_gravity="center_horizontal"
-                                        android:textSize="12sp"
-                                        />
-
-                                </LinearLayout>
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical"
-                                    >
-
-                                    <RelativeLayout
-                                        android:layout_width="60dp"
-                                        android:layout_height="60dp"
-                                        android:background="@drawable/curved_bg"
-                                        android:elevation="8dp"
-                                        android:layout_margin="10dp"
-                                        >
-                                        <ImageView
-                                            android:layout_width="58dp"
-                                            android:layout_height="58dp"
-                                            android:src="@drawable/react"
-                                            android:scaleType="centerCrop"
-                                            android:layout_centerInParent="true"
-                                            />
-
-                                    </RelativeLayout>
-
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:text="Category Four"
-                                        android:textAlignment="center"
-                                        android:layout_gravity="center_horizontal"
-                                        android:textSize="12sp"
-                                        />
-
-                                </LinearLayout>
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical"
-                                    >
-
-                                    <RelativeLayout
-                                        android:layout_width="60dp"
-                                        android:layout_height="60dp"
-                                        android:background="@drawable/curved_bg"
-                                        android:elevation="8dp"
-                                        android:layout_margin="10dp"
-                                        >
-                                        <ImageView
-                                            android:layout_width="58dp"
-                                            android:layout_height="58dp"
-                                            android:src="@drawable/react"
-                                            android:scaleType="centerCrop"
-                                            android:layout_centerInParent="true"
-                                            />
-                                    </RelativeLayout>
-
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:text="Category Four"
-                                        android:textAlignment="center"
-                                        android:layout_gravity="center_horizontal"
-                                        android:textSize="12sp"
-                                        />
-                                </LinearLayout>
-
-                            </LinearLayout>
-                        </LinearLayout>
-                    </HorizontalScrollView>
-
-                    <ScrollView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-
-                        >
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            >
-                            <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:layout_marginLeft="30dp"
-                                >
-
-                                <LinearLayout
-                                    android:id="@+id/layout_one"
-                                    android:layout_width="150dp"
-                                    android:layout_height="200dp"
-                                    android:layout_marginStart="10dp"
-                                    android:layout_marginTop="2dp"
-                                    android:layout_marginEnd="10dp"
-                                    android:background="@drawable/bg_login"
-                                    android:orientation="vertical">
-
-                                </LinearLayout>
-
-                                <androidx.recyclerview.widget.RecyclerView
-                                    android:id="@+id/recycler1"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="210dp"
-                                    android:layout_toRightOf="@+id/layout_one"
-                                    android:background="@drawable/bg_login"
-
-
-                                    >
-
-                                </androidx.recyclerview.widget.RecyclerView>
-                            </RelativeLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:orientation="vertical"
-                                android:padding="10dp"
-                                >
-                                <RelativeLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="2dp"
-                                    android:layout_marginLeft="30dp"
-                                    >
-
-                                    <LinearLayout
-                                        android:id="@+id/layout_two"
-                                        android:layout_width="150dp"
-                                        android:layout_height="230dp"
-                                        android:layout_marginStart="10dp"
-                                        android:layout_marginTop="10dp"
-                                        android:layout_marginEnd="10dp"
-                                        android:layout_marginBottom="2dp"
-                                        android:background="@drawable/bg_login"
-                                        android:orientation="vertical">
-
-                                    </LinearLayout>
-
-                                    <androidx.recyclerview.widget.RecyclerView
-                                        android:id="@+id/recycler2"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="210dp"
-                                        android:layout_toRightOf="@+id/layout_two"
-                                        android:background="@drawable/bg_login"
-
-
-                                        >
-
-                                    </androidx.recyclerview.widget.RecyclerView>
-                                </RelativeLayout>
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:orientation="vertical"
-                                android:padding="10dp"
-                                >
-                                <RelativeLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="2dp"
-                                    android:layout_marginLeft="30dp"
-                                    >
-
-                                    <LinearLayout
-                                        android:id="@+id/layout_three"
-                                        android:layout_width="150dp"
-                                        android:layout_height="230dp"
-                                        android:layout_marginStart="10dp"
-                                        android:layout_marginTop="10dp"
-                                        android:layout_marginEnd="10dp"
-                                        android:layout_marginBottom="2dp"
-                                        android:background="@drawable/bg_login"
-                                        android:orientation="vertical">
-
-                                    </LinearLayout>
-
-                                    <androidx.recyclerview.widget.RecyclerView
-                                        android:id="@+id/recycler3"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="210dp"
-                                        android:layout_toRightOf="@+id/layout_three"
-                                        android:background="@drawable/bg_login"
-
-
-                                        >
-
-                                    </androidx.recyclerview.widget.RecyclerView>
-                                </RelativeLayout>
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:orientation="vertical"
-                                android:padding="10dp"
-                                >
-                                <RelativeLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="2dp"
-                                    android:layout_marginLeft="30dp"
-                                    >
-
-                                    <LinearLayout
-                                        android:id="@+id/layout_four"
-                                        android:layout_width="150dp"
-                                        android:layout_height="230dp"
-                                        android:layout_marginStart="10dp"
-                                        android:layout_marginTop="2dp"
-                                        android:layout_marginEnd="10dp"
-                                        android:layout_marginBottom="2dp"
-                                        android:background="@drawable/bg_login"
-                                        android:orientation="vertical">
-
-                                    </LinearLayout>
-
-                                    <androidx.recyclerview.widget.RecyclerView
-                                        android:id="@+id/recycler4"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="210dp"
-                                        android:layout_toRightOf="@+id/layout_four"
-                                        android:background="@drawable/bg_login"
-
-
-                                        >
-
-                                    </androidx.recyclerview.widget.RecyclerView>
-                                </RelativeLayout>
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                    </ScrollView>
-
-
-
-
-
-
-                </LinearLayout>
-
-
-
-
-
-            </ScrollView>
-        </LinearLayout>
-
-        -->
-
+                android:layout_gravity="center_horizontal"
+                android:backgroundTint="#F9A826"
+                android:src="@drawable/ic_add"
+                app:layout_anchor="@id/bottom_App"
+                app:layout_constraintBottom_toTopOf="@+id/bottom_nav">
+
+            </com.google.android.material.floatingactionbutton.FloatingActionButton>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </LinearLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>
