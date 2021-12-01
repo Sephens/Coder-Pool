@@ -17,9 +17,9 @@ public class Articles {
     @SerializedName("description")
     @Expose
     private String description;
-    @SerializedName("urlToImg")
+    @SerializedName("urlToImage")
     @Expose
-    private String urlToImg;
+    private String urlToImage;
     @SerializedName("publishedAt")
     @Expose
     private String publishedAt;
@@ -56,12 +56,12 @@ public class Articles {
         this.description = description;
     }
 
-    public String getUrlToImg() {
-        return urlToImg;
+    public String getUrlToImage() {
+        return urlToImage;
     }
 
-    public void setUrlToImg(String urlToImg) {
-        this.urlToImg = urlToImg;
+    public void setUrlToImage(String urlToImage) {
+        this.urlToImage = urlToImage;
     }
 
     public String getPublishedAt() {

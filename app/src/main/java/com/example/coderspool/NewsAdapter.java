@@ -40,7 +40,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         holder.tvSource.setText(a.getSource().getName());
         holder.tvDate.setText(a.getPublishedAt());
 
-        String imageUrl = a.getUrlToImg();
+        String imageUrl = a.getUrlToImage();
         Picasso.with(context).load(imageUrl).into(holder.imageView);
     }
 
