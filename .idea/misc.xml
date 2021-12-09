@@ -35,18 +35,22 @@
         <entry key="app/src/main/res/drawable/search_icon.xml" value="0.10520833333333333" />
         <entry key="app/src/main/res/drawable/settings_icon.xml" value="0.10520833333333333" />
         <entry key="app/src/main/res/layout/activity_android_bks.xml" value="0.15185185185185185" />
-        <entry key="app/src/main/res/layout/activity_books_category.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_bottom_nav.xml" value="0.19322916666666667" />
-        <entry key="app/src/main/res/layout/activity_category.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_books_category.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_bottom_nav.xml" value="0.15" />
+        <entry key="app/src/main/res/layout/activity_category.xml" value="0.15" />
+        <entry key="app/src/main/res/layout/activity_category2.xml" value="0.15729166666666666" />
+        <entry key="app/src/main/res/layout/activity_category_item_quizes.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_cbks.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_cplus_bks.xml" value="0.15" />
         <entry key="app/src/main/res/layout/activity_csharp_bks.xml" value="0.178125" />
-        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_flutter_bks.xml" value="0.178125" />
         <entry key="app/src/main/res/layout/activity_golang_bks.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_java_bks.xml" value="0.15185185185185185" />
-        <entry key="app/src/main/res/layout/activity_java_books.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/activity_java_books.xml" value="0.11" />
         <entry key="app/src/main/res/layout/activity_java_script_bks.xml" value="0.178125" />
+        <entry key="app/src/main/res/layout/activity_levels.xml" value="0.17239583333333333" />
+        <entry key="app/src/main/res/layout/activity_levels_quizzes.xml" value="0.17239583333333333" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_my_news.xml" value="0.19322916666666667" />
@@ -54,25 +58,35 @@
         <entry key="app/src/main/res/layout/activity_news_paper.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_note_editor.xml" value="0.178125" />
         <entry key="app/src/main/res/layout/activity_note_pad.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/activity_notification_daily.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_pdf_view_java.xml" value="0.1638888888888889" />
         <entry key="app/src/main/res/layout/activity_php.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_python_bks.xml" value="0.15185185185185185" />
         <entry key="app/src/main/res/layout/activity_questions.xml" value="0.1638888888888889" />
+        <entry key="app/src/main/res/layout/activity_quizz.xml" value="0.15" />
+        <entry key="app/src/main/res/layout/activity_quizzes.xml" value="0.13" />
+        <entry key="app/src/main/res/layout/activity_quizzes_cat.xml" value="0.12" />
+        <entry key="app/src/main/res/layout/activity_quizzes_category.xml" value="0.15729166666666666" />
+        <entry key="app/src/main/res/layout/activity_scores.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_scores2.xml" value="0.15729166666666666" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.178125" />
-        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.12" />
         <entry key="app/src/main/res/layout/activity_user_profile.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_viewbinding.xml" value="0.1638888888888889" />
         <entry key="app/src/main/res/layout/card_2.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/card_3.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/card_4.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/category_item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_create_note.xml" value="0.1259259259259259" />
         <entry key="app/src/main/res/layout/header.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/level_item_layout.xml" value="0.1" />
         <entry key="app/src/main/res/layout/news_items.xml" value="0.2" />
         <entry key="app/src/main/res/layout/recycler1.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.14" />
         <entry key="app/src/main/res/menu/context_menu.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/menu/main_menu.xml" value="0.16" />
+        <entry key="app/src/main/res/menu/menu1.xml" value="0.17239583333333333" />
       </map>
     </option>
   </component>

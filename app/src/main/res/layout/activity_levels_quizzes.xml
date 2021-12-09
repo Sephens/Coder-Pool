@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".LevelsActivityQuizzes">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/levelsToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#006600"
+        >
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/levelsTxtView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Levels"
+        android:textSize="24sp"
+        android:padding="16dp"
+        android:textStyle="bold"
+        />
+
+    <GridView
+        android:id="@+id/levelsGridView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:horizontalSpacing="8dp"
+        android:verticalSpacing="8dp"
+        android:padding="8dp"
+        android:columnWidth="80dp"
+        android:numColumns="auto_fit"
+        >
+
+    </GridView>
+
+</LinearLayout>

@@ -85,7 +85,6 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             >
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -340,43 +339,71 @@
         </ScrollView>
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.19"
+            android:layout_height="wrap_content"
             >
             <com.google.android.material.bottomappbar.BottomAppBar
                 android:id="@+id/bottom_App"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 app:fabCradleMargin="10dp"
-                app:fabCradleRoundedCornerRadius="20dp">
-
+                app:fabCradleRoundedCornerRadius="16dp">
                 <com.google.android.material.bottomnavigation.BottomNavigationView
                     android:id="@+id/bottom_nav"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:itemIconTint="@color/bottom_nav_background"
                     app:itemTextColor="@color/bottom_nav_background"
                     android:layout_marginRight="20dp"
                     app:labelVisibilityMode="labeled"
                     app:menu="@menu/bottom_nav_menu">
-
                 </com.google.android.material.bottomnavigation.BottomNavigationView>
-
             </com.google.android.material.bottomappbar.BottomAppBar>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/takeNote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="#F9A826"
+                    android:src="@drawable/take_note"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:fabSize="mini"
+                   >
+                </com.google.android.material.floatingactionbutton.FloatingActionButton>
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/allNotes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="#F9A826"
+                    android:src="@drawable/notes_icon"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:fabSize="mini"
+                   >
+                </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
+            </LinearLayout>
             <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/addNotes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="center"
                 android:backgroundTint="#F9A826"
                 android:src="@drawable/ic_add"
+                android:clickable="true"
+                android:focusable="true"
+                app:fabSize="normal"
                 app:layout_anchor="@id/bottom_App"
-                app:layout_constraintBottom_toTopOf="@+id/bottom_nav">
-
+                app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
+                >
             </com.google.android.material.floatingactionbutton.FloatingActionButton>
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
     </LinearLayout>
-
 </androidx.drawerlayout.widget.DrawerLayout>

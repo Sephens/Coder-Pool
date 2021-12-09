@@ -16,6 +16,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CodersPool">
         <activity
+            android:name=".ScoresActivity"
+            android:exported="true" />
+        <activity
+            android:name=".LevelsActivityQuizzes"
+            android:exported="true" />
+        <activity
+            android:name=".QuizzesCat"
+            android:exported="true" />
+        <activity
+            android:name=".Category"
+            android:exported="true" />
+        <activity
+            android:name=".Notification_Daily"
+            android:exported="true" />
+        <activity
             android:name=".NewsPaper"
             android:exported="true" />
         <activity
@@ -71,9 +86,6 @@
             android:exported="true" />
         <activity
             android:name=".NotePad"
-            android:exported="true" />
-        <activity
-            android:name=".Category"
             android:exported="true" />
         <activity
             android:name=".Dashboard"
